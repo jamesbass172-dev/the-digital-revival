@@ -9,8 +9,62 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SubjectsRouteImport } from './routes/subjects'
+import { Route as RulesRouteImport } from './routes/rules'
+import { Route as OurStandRouteImport } from './routes/our-stand'
+import { Route as JoiningRouteImport } from './routes/joining'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as CurriculumRouteImport } from './routes/curriculum'
+import { Route as ContactsRouteImport } from './routes/contacts'
+import { Route as AlmanacRouteImport } from './routes/almanac'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SubjectsRoute = SubjectsRouteImport.update({
+  id: '/subjects',
+  path: '/subjects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RulesRoute = RulesRouteImport.update({
+  id: '/rules',
+  path: '/rules',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurStandRoute = OurStandRouteImport.update({
+  id: '/our-stand',
+  path: '/our-stand',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoiningRoute = JoiningRouteImport.update({
+  id: '/joining',
+  path: '/joining',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CurriculumRoute = CurriculumRouteImport.update({
+  id: '/curriculum',
+  path: '/curriculum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactsRoute = ContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlmanacRoute = AlmanacRouteImport.update({
+  id: '/almanac',
+  path: '/almanac',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +73,158 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/almanac': typeof AlmanacRoute
+  '/contacts': typeof ContactsRoute
+  '/curriculum': typeof CurriculumRoute
+  '/gallery': typeof GalleryRoute
+  '/joining': typeof JoiningRoute
+  '/our-stand': typeof OurStandRoute
+  '/rules': typeof RulesRoute
+  '/subjects': typeof SubjectsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/almanac': typeof AlmanacRoute
+  '/contacts': typeof ContactsRoute
+  '/curriculum': typeof CurriculumRoute
+  '/gallery': typeof GalleryRoute
+  '/joining': typeof JoiningRoute
+  '/our-stand': typeof OurStandRoute
+  '/rules': typeof RulesRoute
+  '/subjects': typeof SubjectsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/almanac': typeof AlmanacRoute
+  '/contacts': typeof ContactsRoute
+  '/curriculum': typeof CurriculumRoute
+  '/gallery': typeof GalleryRoute
+  '/joining': typeof JoiningRoute
+  '/our-stand': typeof OurStandRoute
+  '/rules': typeof RulesRoute
+  '/subjects': typeof SubjectsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/almanac'
+    | '/contacts'
+    | '/curriculum'
+    | '/gallery'
+    | '/joining'
+    | '/our-stand'
+    | '/rules'
+    | '/subjects'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/almanac'
+    | '/contacts'
+    | '/curriculum'
+    | '/gallery'
+    | '/joining'
+    | '/our-stand'
+    | '/rules'
+    | '/subjects'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/almanac'
+    | '/contacts'
+    | '/curriculum'
+    | '/gallery'
+    | '/joining'
+    | '/our-stand'
+    | '/rules'
+    | '/subjects'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AlmanacRoute: typeof AlmanacRoute
+  ContactsRoute: typeof ContactsRoute
+  CurriculumRoute: typeof CurriculumRoute
+  GalleryRoute: typeof GalleryRoute
+  JoiningRoute: typeof JoiningRoute
+  OurStandRoute: typeof OurStandRoute
+  RulesRoute: typeof RulesRoute
+  SubjectsRoute: typeof SubjectsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/subjects': {
+      id: '/subjects'
+      path: '/subjects'
+      fullPath: '/subjects'
+      preLoaderRoute: typeof SubjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rules': {
+      id: '/rules'
+      path: '/rules'
+      fullPath: '/rules'
+      preLoaderRoute: typeof RulesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-stand': {
+      id: '/our-stand'
+      path: '/our-stand'
+      fullPath: '/our-stand'
+      preLoaderRoute: typeof OurStandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/joining': {
+      id: '/joining'
+      path: '/joining'
+      fullPath: '/joining'
+      preLoaderRoute: typeof JoiningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/curriculum': {
+      id: '/curriculum'
+      path: '/curriculum'
+      fullPath: '/curriculum'
+      preLoaderRoute: typeof CurriculumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacts': {
+      id: '/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof ContactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/almanac': {
+      id: '/almanac'
+      path: '/almanac'
+      fullPath: '/almanac'
+      preLoaderRoute: typeof AlmanacRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +237,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AlmanacRoute: AlmanacRoute,
+  ContactsRoute: ContactsRoute,
+  CurriculumRoute: CurriculumRoute,
+  GalleryRoute: GalleryRoute,
+  JoiningRoute: JoiningRoute,
+  OurStandRoute: OurStandRoute,
+  RulesRoute: RulesRoute,
+  SubjectsRoute: SubjectsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
